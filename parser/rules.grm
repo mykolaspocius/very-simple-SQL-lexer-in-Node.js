@@ -1,0 +1,12 @@
+<sql>:=<query> semicol
+<query>:=<createquery> | <selectquery> | <updatequery> | <deletequery>
+<createquery>:=create
+<selectquery>:=select <projection> from <relation>
+<updatequery>:=update
+<deletequery>:=delete
+<projection>:= * | identifier | identifier <identifier_list>
+<identifier_list>:= coma identifier <identifier_list> | <epsilon>
+<relation>:= <selectquery> | <table> <table_list>
+<table>:= identifier | identifier dot identifier
+<table_list>:= coma <table> <table_list> | <epsilon>
+<epsilon>:=
